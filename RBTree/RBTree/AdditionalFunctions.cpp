@@ -50,7 +50,7 @@ Node* getSibling(Node* node, Node* parent) {
 
 void reverseColor(Node* node) {
     if (node)
-        node->color = !node->color;
+        node->color = (node->color == RED) ? BLACK : RED;
 }
 
 Node* BSTInsert(Node* &root, int x) {
@@ -216,7 +216,7 @@ void fixViolateDeleteForSiblingIsLeftChild(Node* &root, Node* &sibling, Node* &p
     // - Reverse color of internal grandchild and sibling.
     // - Rotate left at sibling.
     // - Goto case 4.2.
-    if (!sibling->left || sibling->left->color == BLACK) {
+    if (sibling->left == null || sibling->left->color == BLACK) {
         reverseColor(sibling->right);
         reverseColor(sibling);
         rotateLeft(root, sibling);
@@ -239,7 +239,7 @@ void fixViolateDeleteForSiblingIsRightChild(Node* &root, Node* &sibling, Node* &
     // - Reverse color of internal grandchild and sibling.
     // - Rotate right at sibling.
     // - Goto case 4.2.
-    if (!sibling->right || sibling->right->color == BLACK) {
+    if (sibling->right == null || sibling->right->color == BLACK) {
         reverseColor(sibling->left);
         reverseColor(sibling);
         rotateRight(root, sibling);

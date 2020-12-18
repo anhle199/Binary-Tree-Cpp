@@ -12,10 +12,7 @@
 
 using namespace std;
 
-#define RED     true
-#define BLACK   false
-
-typedef bool    Color;
+enum Color {RED, BLACK};
 
 struct Node {
     int key;

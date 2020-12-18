@@ -10,12 +10,9 @@
 
 #include "RBTree.h"
 
-#define null    nullptr
+#define null  nullptr
 
-#define LEFT    true
-#define RIGHT   false
-
-typedef bool    Direction;
+enum Direction {LEFT, RIGHT};
 
 string colorToString(Color color);
 
