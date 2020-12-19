@@ -32,6 +32,22 @@ void NLR(Node* root) {
     }
 }
 
+void LNR(Node* root) {
+    if (root) {
+        LNR(root->left);
+        cout << "(key: " << root->key << ", color: " << colorToString(root->color) << ")" << endl;
+        LNR(root->right);
+    }
+}
+
+void LRN(Node* root) {
+    if (root) {
+        LRN(root->left);
+        LRN(root->right);
+        cout << "(key: " << root->key << ", color: " << colorToString(root->color) << ")" << endl;
+    }
+}
+
 void levelOrder(Node* root) {
     if (root == nullptr)
         return;

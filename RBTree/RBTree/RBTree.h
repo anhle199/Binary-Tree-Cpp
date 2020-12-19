@@ -26,6 +26,8 @@ Node* createNode(int x, Color color);
 Node* createRBTree(int x);
 
 void NLR(Node* root);
+void LNR(Node* root);
+void LRN(Node* root);
 void levelOrder(Node* root);
 
 Node* search(Node* root, int x);
