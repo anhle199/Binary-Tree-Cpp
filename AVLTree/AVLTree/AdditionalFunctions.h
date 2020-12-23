@@ -14,10 +14,10 @@
 #define BALANCE             0
 #define RIGHT_DEVIATION     1
 
-int calculateBalanceFactor(Node* root);
-int heightOfNode(Node* root);
-void insertImp(Node* &root, int x, bool &insertSuccessful);
-void searchToDelete(Node* &p, Node* &q);
-void removeImp(Node* &root, int x, bool &removeSuccessful);
+int calculateBalanceFactor(Node* node);
+int heightOfNode(Node* node);
+void insertAndFixHeight(Node* &root, int x, bool &success);
+void searchToDelete(Node* &nodeDeleted, Node* &successor);
+void removeAndFixHeight(Node* &root, int x, bool &success);
 
 #endif

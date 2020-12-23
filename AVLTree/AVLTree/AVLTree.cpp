@@ -109,13 +109,13 @@ Node* search(Node* root, int x) {
 }
 
 void insert(Node* &root, int x) {
-    bool insertSuccessful = false;
-    insertImp(root, x, insertSuccessful);
+    bool success = false;
+    insertAndFixHeight(root, x, success);
 }
 
 void remove(Node* &root, int x) {
-    bool removeSuccessful = false;
-    removeImp(root, x, removeSuccessful);
+    bool success = false;
+    removeAndFixHeight(root, x, success);
 }
 
 void rotateLeft(Node* &root) {

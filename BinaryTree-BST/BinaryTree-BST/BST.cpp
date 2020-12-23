@@ -19,12 +19,12 @@ void searchToDelete(Node* &p, Node* &q) {
     // |                                |
     // ----------------------------------
 
-//    if (q->right)
-//        searchToDelete(p, q->right);
+//    if (q->left)
+//        searchToDelete(p, q->left);
 //    else {
 //        p->key = q->key;
 //        p = q;
-//        q = q->left;
+//        q = q->right;
 //    }
 
     // ----------------------------------
@@ -41,18 +41,18 @@ void searchToDelete(Node* &p, Node* &q) {
     // |                                |
     // ----------------------------------
 
-    Node* previousPredecessor = nullptr;
-    Node* predecessor = q;
+    Node* previousSuccessor = nullptr;
+    Node* successor = q;
 
-    while (predecessor->right) {
-        previousPredecessor = predecessor;
-        predecessor = predecessor->right;
+    while (successor->right) {
+        previousSuccessor = successor;
+        successor = successor->right;
     }
 
-    p->key = predecessor->key;
-    p = predecessor;
-    if (previousPredecessor)
-        previousPredecessor->right = predecessor->left;
+    p->key = successor->key;
+    p = successor;
+    if (previousSuccessor)
+        previousSuccessor->right = successor->left;
 
     // ----------------------------------
 }
